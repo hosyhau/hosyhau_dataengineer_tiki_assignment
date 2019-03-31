@@ -60,15 +60,6 @@ public class ProductCombinationServiceImplTest {
         assertEquals(productsActual.get(0).getSalePrice(), new BigDecimal("950"));
     }
 
-    @Test
-    public void testMatchingMarketPriceIphoneX(){
-
-        Map<String, Set<Product>> actual = productService.createProduct(productDtos);
-
-        List<Product> productsActual = actual.get(productName).parallelStream().collect(Collectors.toList());
-
-        assertEquals(productsActual.get(0).getMarketPrice(), productDtos.get(0).getMarketPrice());
-    }
 
     @Test
     public void testMatchingDescriptionIphoneX(){
@@ -77,7 +68,7 @@ public class ProductCombinationServiceImplTest {
 
         List<Product> productsActual = actual.get(productName).parallelStream().collect(Collectors.toList());
 
-        assertEquals(productsActual.get(0).getDescription(), productDtos.get(0).getDescription());
+        assertEquals(productDtos.get(0).getDescription(), productsActual.get(0).getDescription());
     }
 
     @Test
